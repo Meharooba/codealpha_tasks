@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryCart| Customer Support</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="chat-container">
+
+        <header class="chat-header">
+            <div class="bot-avatar">Q</div>
+
+            <div class="header-info">
+                <h1>QueryCart</h1>
+                <p><span class="status-dot"></span> Online Support</p>
+            </div>
+
+            <span class="header-badge">FAQ BOT</span>
+        </header>
+
+        <main class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <div class="welcome-icon">👋</div>
+                <h2>Hey there!</h2>
+                <p>Welcome to QueryCart <br> How can we help you today?</p>
+            </div>
+
+            <div class="message bot-message welcome-bubble">
+                You can ask me about orders,delivery,<br>returns,
+                refunds and payment methods
+            </div>
+        </main>
+
+        <div class="suggestion-section">
+            <p class="suggestion-title">QUICK QUESTIONS</p>
+
+            <div class="suggestions">
+                <button type="button"
+                        onclick="sendSuggestion('How can I track my order?')">
+                    📦 Track order
+                </button>
+
+                <button type="button"
+                        onclick="sendSuggestion('What is your return policy?')">
+                    ↩ Returns
+                </button>
+
+                <button type="button"
+                        onclick="sendSuggestion('Which payment methods do you accept?')">
+                    💳 Payments
+                </button>
+            </div>
+        </div>
+
+        <form id="chatForm" class="chat-input">
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask us anything..."
+                autocomplete="off"
+                maxlength="500"
+                aria-label="Type your question"
+                required
+            >
+
+            <button type="submit" id="sendButton" aria-label="Send message">
+                Send ↑
+            </button>
+        </form>
+
+        <footer class="chat-footer">
+            Powered by Python NLP | QueryCart
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
